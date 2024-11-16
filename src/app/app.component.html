@@ -1,9 +1,10 @@
 <div class="d-flex">
   <!--sidebar-->
-  <shared-side-bar *ngIf="!isMobile"></shared-side-bar>
+  <div *ngIf="!isMobile">
+    <shared-side-bar></shared-side-bar>
+  </div>
   <!--homepage-->
   <div class="container-fluid">
-
     <div *ngIf="isMobile">
       <shared-side-bar></shared-side-bar>
     </div>
