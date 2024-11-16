@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   public isMobile: boolean = false;
 
   ngOnInit(): void {
+    // ? test 1
     window.addEventListener('resize', ()=>{
 
       if(window.innerWidth <= 768){
