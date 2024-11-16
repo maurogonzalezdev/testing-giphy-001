@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,20 @@ export class AppComponent implements OnInit {
   title = 'giphy-project';
 
   public isMobile?: boolean;
+  public isBrowser?: boolean;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private _platformId: any) {}
 
   ngOnInit(): void {
-    if (document.readyState == 'interactive') {
-      this.changeMobileStatus(window);
+    if(isPlatformBrowser(this._platformId)) {
+     this.isBrowser = true;
+
+      if (document.readyState == 'interactive') {
+        this.changeMobileStatus(window);
+      }
+
     }
+
   }
 
   @HostListener('window: resize', ['$event'])

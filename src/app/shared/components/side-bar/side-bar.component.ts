@@ -5,14 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './side-bar.component.html',
   styles: `
   #sidebar{
-    height: 100vh;
-    width: 250px;
+    height: 200px;
+    width: 100%;
   }
 
-  @media only screen and (max-width: 768px){
+  @media only screen and (min-width: 768px){
     #sidebar{
-      height: 200px;
-      width: 100%;
+      height: 100vh;
+      width: 200px;
     }
   }
   `
